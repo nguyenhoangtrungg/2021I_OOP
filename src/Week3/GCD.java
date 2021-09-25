@@ -1,6 +1,6 @@
 package Week3;
 
-public class Solution2 {
+public class GCD {
 
   /**
    * ello.
@@ -8,10 +8,13 @@ public class Solution2 {
    * @param v is v.
    * @return gcd.
    */
-  public static int GCD(int u, int v) {
+  public static int gcd(int u, int v) {
     if (v == 0) {
       return Math.abs(u);
     }
-    return GCD(v, u % v);
+    return gcd(v, u % v);
+  }
+  public static void main(String[] args) {
+
   }
 }

@@ -2,7 +2,7 @@ package Week3;
 
 import java.util.Scanner;
 
-public class Solution1 {
+public class Prime {
 
   /**
    * helo.

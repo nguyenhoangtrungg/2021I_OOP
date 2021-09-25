@@ -1,6 +1,6 @@
 package Week3;
 
-public class Solution {
+public class Calulator {
 
   private int numerator;
 
@@ -28,7 +28,7 @@ public class Solution {
     }
   }
 
-  Solution(int numerator, int denominator) {
+  Calulator(int numerator, int denominator) {
     this.numerator = numerator;
     if (denominator != 0) {
       this.denominator = denominator;
@@ -52,7 +52,7 @@ public class Solution {
    * hello.
    * @return re.
    */
-  public Solution reduce() {
+  public Calulator reduce() {
     int i = gcd(this.getNumerator(), this.getDenominator());
     if (this.numerator * this.denominator < 0) {
       setNumerator(-Math.abs(this.numerator / i));
@@ -69,10 +69,10 @@ public class Solution {
    * @param u is u.
    * @return u.
    */
-  public Solution add(Solution u) {
+  public Calulator add(Calulator u) {
     int num = this.numerator * u.denominator + this.denominator * u.numerator;
     int den = this.denominator * denominator;
-    Solution ans = new Solution(num, den);
+    Calulator ans = new Calulator(num, den);
     return ans.reduce();
   }
 
@@ -81,10 +81,10 @@ public class Solution {
    * @param u is u.
    * @return u.
    */
-  public Solution subtract(Solution u) {
+  public Calulator subtract(Calulator u) {
     int num = this.numerator * u.denominator - this.denominator * u.numerator;
     int den = this.denominator * u.denominator;
-    Solution ans = new Solution(num, den);
+    Calulator ans = new Calulator(num, den);
     return ans.reduce();
   }
 
@@ -93,10 +93,10 @@ public class Solution {
    * @param u is u.
    * @return u.
    */
-  public Solution multiply(Solution u) {
+  public Calulator multiply(Calulator u) {
     int num = this.numerator * u.numerator;
     int den = this.denominator * u.denominator;
-    Solution ans = new Solution(num, den);
+    Calulator ans = new Calulator(num, den);
     return ans.reduce();
   }
 
@@ -105,10 +105,10 @@ public class Solution {
    * @param u is u.
    * @return u.
    */
-  public Solution divide(Solution u) {
+  public Calulator divide(Calulator u) {
     int num = this.numerator * u.denominator;
     int den = this.denominator * u.numerator;
-    Solution ans = new Solution(num, den);
+    Calulator ans = new Calulator(num, den);
     return ans.reduce();
   }
 
@@ -118,8 +118,8 @@ public class Solution {
    * @return ok.
    */
   public boolean equals(Object obj) {
-    if (obj instanceof Solution) {
-      Solution other = (Solution) obj;
+    if (obj instanceof Calulator) {
+      Calulator other = (Calulator) obj;
       other.reduce();
       return this.numerator == other.numerator && this.denominator == other.denominator;
     }
