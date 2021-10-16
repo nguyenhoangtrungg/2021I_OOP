@@ -74,12 +74,6 @@ public class Account {
   }
 
   public static void main(String[] args) {
-    Account acc = new Account();
-    acc.addTransaction(3300,"deposit");
-    acc.addTransaction(3000,"withdraw");
-    acc.addTransaction(60000, "withdraw");
-    acc.addTransaction(1000, "deposit");
-    acc.addTransaction(10, "gg");
-    acc.printTransaction();
+    System.out.println(Transaction.DEPOSIT);
   }
 }
